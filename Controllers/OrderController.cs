@@ -70,7 +70,7 @@ namespace Tryout2.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult PatchAuthor([FromBody]JsonPatchDocument<Drivers> patch, int Id)
+        public IActionResult PatchAuthor([FromBody]JsonPatchDocument<Orders> patch, int Id)
         {
 
             patch.ApplyTo(_context.Driver.Find(Id));
@@ -79,15 +79,15 @@ namespace Tryout2.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutOrder([FromBody]JsonPatchDocument<Drivers> patch, int Id)
+        public IActionResult PutOrder([FromBody]JsonPatchDocument<Orders> patch, int Id)
         {
 
-            var Cust = _context.Drivers.First(a => a.id == Id);
+            var Cust = _context.Orders.First(a => a.id == Id);
             Cust.order_status = "not ok";
             Cust.updated_at = DateTime.Now;
             _context.SaveChangesAsync();
 
-            patch.ApplyTo(_context.Drivers.Find(Id));
+            patch.ApplyTo(_context.Orders.Find(Id));
 
             return Ok(new { message = "success put data", status = true, data = Cust } );
         }
