@@ -74,7 +74,7 @@ namespace Tryout2.Controllers
       
 
         [HttpPut("{id}")]
-        public IActionResult PutOrder([FromBody]JsonPatchDocument<Drivers> patch, int Id)
+        public IActionResult PutDriver([FromBody]JsonPatchDocument<Drivers> patch, int Id)
         {
 
             var Cust = _context.Drivers.First(a => a.id == Id);
