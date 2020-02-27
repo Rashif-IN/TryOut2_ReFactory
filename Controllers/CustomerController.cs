@@ -99,7 +99,7 @@ namespace Tryout2.Controllers
 
             patch.ApplyTo(_context.Customer.Find(Id));
 
-            return Ok(new { message = "success removed data", status = true, data = Cust } );
+            return Ok(new { message = "success put data", status = true, data = Cust } );
         }
 
     }
