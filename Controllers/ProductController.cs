@@ -72,7 +72,7 @@ namespace Tryout2.Controllers
 
         
         [HttpPut("{id}")]
-        public IActionResult PutCustomer([FromBody]JsonPatchDocument<Products> patch, int Id)
+        public IActionResult PutProducts([FromBody]JsonPatchDocument<Products> patch, int Id)
         {
 
             var Cust = _context.Products.First(a => a.id == Id);
