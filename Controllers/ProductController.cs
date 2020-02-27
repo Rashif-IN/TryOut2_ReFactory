@@ -68,14 +68,21 @@ namespace Tryout2.Controllers
             return Ok();
         }
 
-        [HttpPatch("{id}")]
-        public IActionResult PatchAuthor([FromBody]JsonPatchDocument<Products> patch, int Id)
+       
+
+        
+        [HttpPut("{id}")]
+        public IActionResult PutCustomer([FromBody]JsonPatchDocument<Products> patch, int Id)
         {
 
-            patch.ApplyTo(_context.Product.Find(Id));
+            var Cust = _context.Products.First(a => a.id == Id);
+            Cust.name = "Requiem Arrow";
+            Cust.updated_at = DateTime.Now;
+            _context.SaveChangesAsync();
 
-            return Ok();
+            patch.ApplyTo(_context.Products.Find(Id));
+
+            return Ok(new { message = "success put data", status = true, data = Cust } );
         }
-
     }
 }
