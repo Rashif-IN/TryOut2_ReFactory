@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{20022176-9E85-4E90-9E1B-AE8D9E826B40}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/ProductController.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="33" Column="38" />
+      <File FileName="OnlineOrderContext.cs" Line="17" Column="234" />
+      <File FileName="Controllers/CustomerController.cs" Line="92" Column="43" />
+      <File FileName="Controllers/DriversController.cs" Line="75" Column="41" />
+      <File FileName="Controllers/OrderController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/OrderItemsController.cs" Line="79" Column="6" />
+      <File FileName="Controllers/ProductController.cs" Line="9" Column="6" />
+      <File FileName="Model/OnlineOrderRequest.cs" Line="25" Column="29" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tryout2" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="Tryout2" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductController.cs" selected="True" />
+              </Node>
+              <Node name="Model" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tryout2 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
