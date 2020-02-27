@@ -76,5 +76,17 @@ namespace Tryout2.Controllers
             return Ok();
         }
 
+        [HttpPut("{id}")]
+        public IActionResult PutOrderItem([FromBody]JsonPatchDocument<Order_items> patch, int Id)
+        {
+
+            var Cust = _context.Order_items.First(a => a.id == Id);
+            Cust.quantity = 2;
+            _context.SaveChangesAsync();
+
+            patch.ApplyTo(_context.Order_items.Find(Id));
+
+            return Ok(new { message = "success put data", status = true, data = Cust } );
+        }
     }
 }
