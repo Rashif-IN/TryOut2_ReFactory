@@ -71,15 +71,21 @@ namespace Tryout2.Controllers
             return Ok(Cust);
         }
 
-        [HttpPatch("{id}")]
-        public IActionResult PatchDriver([FromBody]JsonPatchDocument<Drivers> patch, int Id)
+      
+
+        [HttpPut("{id}")]
+        public IActionResult PutOrder([FromBody]JsonPatchDocument<Drivers> patch, int Id)
         {
 
-            patch.ApplyTo(_context.Driver.Find(Id));
+            var Cust = _context.Drivers.First(a => a.id == Id);
+            Cust.order_status = "not ok";
+            Cust.updated_at = DateTime.Now;
+            _context.SaveChangesAsync();
 
-            return Ok();
+            patch.ApplyTo(_context.Drivers.Find(Id));
+
+            return Ok(new { message = "success put data", status = true, data = Cust } );
         }
-
     }
 
     
